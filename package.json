@@ -1,0 +1,24 @@
+{
+  "name": "OdinChallenges",
+  "version": "1.0.0",
+  "description": "Sample text to begin project",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^7.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srkarra/OdinChallenges.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srkarra/OdinChallenges/issues"
+  },
+  "homepage": "https://github.com/srkarra/OdinChallenges#readme"
+}

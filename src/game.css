@@ -1,0 +1,33 @@
+html,body{
+    text-align: center;
+    background-color: beige;
+}
+.header{
+    text-align: center;
+    font-size: medium;
+    font-family: sans-serif;
+}
+.playGame{
+    padding-top: 100px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+.button{
+    font-size: 25px;
+    border-radius: 14px;
+    background-color: lightblue;
+}
+.scores{
+    text-align: center;
+    justify-content: center;
+    font-size: large;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: chocolate;
+    font-family: "Arial Rounded MT Bold";
+}
+.reset{
+    padding-top: 50px;
+    text-align: center;
+}

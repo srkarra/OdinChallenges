@@ -1,7 +1,27 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
 <html>
 <head>
-    <p>Welcome to Rock Paper Scissor</p>
-    <script type="text/javascript" src = game.js>
-    </script>
+    <link rel="stylesheet" href="game.css">
+    <title>Rock Paper Scissor Game</title>
 </head>
+<body>
+<header class="header">
+    <h1> Let's play Rock Paper Scissors</h1>
+</header>
+<div class= "playGame">
+    <button class="button" id="rock" onClick="userPlay(this.id)"> Rock &#129704;</button>
+    <button class="button" id="paper" onClick="userPlay(this.id)"> Paper &#128240;</button>
+    <button class="button" id="scissor" onClick="userPlay(this.id)"> Scissor &#9986;</button>
+</div>
+<div class="reset">
+    <button class="button" id="reset" onclick="gameReset(this.id)"> Reset &#128260;</button>
+</div>
+<div class="scores">
+    <div id="winner">This round's result:</div>
+    <div id="score">Final Scores:</div>
+    <div id="selections">Selections are:</div>
+</div>
+<script type="text/javascript" src = game.js defer></script>
+</body>
 </html>

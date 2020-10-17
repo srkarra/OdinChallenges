@@ -1,50 +1,62 @@
-let gamesChoices = [`rock`,`paper`,`scissor`]
+let gameChoices = [`rock`,`paper`,`scissor`]
 let playerScore=0, computerScore=0, drawScore=0;
-let numberOfRounds = 5;
+let round = 0;
+let playerSelection,computerSelection;
+let roundWinner = document.getElementById("winner")
+let lastScore = document.getElementById("score")
+let selections = document.getElementById("selections")
 
 function computerPlay() {
-    return gamesChoices[Math.floor(Math.random()*3)]
+    computerSelection = gameChoices[Math.floor(Math.random()*3)]
+    console.log(computerSelection)
+    return computerSelection
 }
-
-function userPlay() {
-    let playerSelection = prompt(`Do you want to choose rock, paper or scissor?`).toLowerCase()
-    if(gamesChoices.includes(playerSelection) === false){
-        console.log(`Re enter your options`)
-    }
-    return playerSelection
+function playRound(){
+        computerPlay()
+        playGame()
+        round += 1
+    console.log(round)
 }
-
-function playGame(playerSelection, computerSelection) {
-    playerSelection = userPlay();
-    computerSelection = computerPlay();
-    if (playerSelection === `rock` && computerSelection === `rock` || playerSelection === `scissor` && computerSelection === `scissor` || playerSelection === `paper` && computerSelection === `paper`){
-        console.log(`Same Pinch, It's a draw`);
+function playGame() {
+    if (playerSelection === computerSelection){
+        roundWinner.textContent = "This round is a draw"
         drawScore+=1
     }
     else if (playerSelection === `paper` && computerSelection === `rock` || playerSelection === `scissor` && computerSelection === `paper` || playerSelection === `rock` && computerSelection ===`scissor`){
-        console.log(`Player Wins`);
+        roundWinner.textContent ="In this round:" + "Player Wins"
         playerScore+=1
     }
     else if (playerSelection === `paper` && computerSelection === `scissor` || playerSelection ===`scissor` && computerSelection === `rock` || playerSelection === `rock` && computerSelection === `paper`){
-        console.log(`Computer wins!`);
+        roundWinner.textContent = "In this round:" + "Computer Wins"
         computerScore+=1
     }
-}
-// Looping the game 5 times
-function startGame() {
-    for (let i=0; i<numberOfRounds; i++){
-        playGame()
+    else {
+        console.log("Something went wrong")
     }
-    console.log(`Final scores are`,'\n', `Player score is`,playerScore,'\n',`Computer Score is`,computerScore,'\n',`Draw Score is`,drawScore)
 }
-startGame()
-
-
-
-
-
-
-
-
+function updateScore() {
+    lastScore.textContent = 'Your Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+}
+function selectedOptions() {
+    selections.textContent = 'Your Selection: ' + playerSelection + ' ' + 'Computer Selection: ' + computerSelection;
+}
+function userPlay(clicked_id)
+{
+        playerSelection = String(clicked_id)
+        playRound()
+        updateScore()
+        selectedOptions()
+}
+function gameReset(clicked_text) {
+    playerScore=0;
+    computerScore=0;
+    playerSelection = ''
+    computerSelection=''
+    lastScore.textContent = 'Your Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+    selections.textContent = 'Your Selection: ' + playerSelection + ' ' + 'Computer Selection: ' + computerSelection;
+    roundWinner.textContent = ''
+    return clicked_text
+}
+gameReset()
 
 
