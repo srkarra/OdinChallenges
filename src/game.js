@@ -35,10 +35,10 @@ function playGame() {
     }
 }
 function updateScore() {
-    lastScore.textContent = 'Your Score: ' + playerScore + ' ' + 'Computer Score: ' + computerScore;
+    lastScore.textContent = 'Your Score: ' + playerScore + ' 🏁 ' + ' Computer Score: ' + computerScore;
 }
 function selectedOptions() {
-    selections.textContent = 'Your Selection: ' + playerSelection + ' ' + 'Computer Selection: ' + computerSelection;
+    selections.textContent = 'Your Selection: ' + playerSelection + ' 🏁 '  + ' Computer Selection: ' + computerSelection;
 }
 function userPlay(clicked_id)
 {
