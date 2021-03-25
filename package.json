@@ -4,9 +4,12 @@
   "description": "Sample text to begin project",
   "main": "index.js",
   "dependencies": {
-    "eslint": "^7.11.0"
+    "eslint": "^7.11.0",
+    "mysql": "^2.18.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "aws-sdk": "^2.871.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
